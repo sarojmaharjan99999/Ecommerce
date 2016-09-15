@@ -7,8 +7,12 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
-      }
-    }
+      },
+      indexes: [
+        { name: 'uniqueName', unique: true, fields: [sequelize.fn('lower', sequelize.col('name'))] }
+      ]
+   },
+    timestamps : true
   });
   return Category;
 };
