@@ -14,7 +14,8 @@ module.exports = function(sequelize, DataTypes) {
       indexes: [
         { name: 'Users_email_key', unique: true, fields: [sequelize.fn('lower', sequelize.col('email'))] }
       ]
-    }
+    },
+    timestamps: true
   });
   return User;
 };
