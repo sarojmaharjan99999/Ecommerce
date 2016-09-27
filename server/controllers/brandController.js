@@ -1,5 +1,6 @@
 "use strict";
 var brandService = require("../services/brandService");
+var models = require('../models/index');
 
 var brandCreate = function (req, res) {
     var brandParam = req.body;
@@ -14,7 +15,7 @@ var brandCreate = function (req, res) {
 
 
 var brandListing = function(req, res){
-    brandService.brandL()
+    brandService.listBrand()
         .then(function (brand) {
             res.json({brands: brand});
         })

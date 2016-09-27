@@ -21,6 +21,50 @@ var createBrand = function (brandParams) {
 
 };
 
+var listBrand = function () {
+    return new Promise(function (resolve, reject) {
+        models.Brand.findAll()
+            .then(function (brands) {
+                resolve(brands);
+            })
+            .catch(function (err) {
+                reject(err);
+            })
+    });
+};
+
+var retriveBrand = function (id) {
+    return new Promise(function (resolve, reject) {
+        models.Brand.findAll(id)
+            .then(function (brands) {
+                resolve(brands);
+            })
+            .catch(function (err) {
+                reject(err);
+            })
+    });
+};
+
+var updateBrand = function () {
+    var id = req.params.id;
+    var brandParams = req.body;
+    return new Promise(function (resolve, reject) {
+        models.Brand.findById(id)
+            .then(function (brand) {
+                brand.updateAttributes(brandParams)
+                    .then(function (updatedBrands) {
+                        res.json({brand: updatedBrands});
+                    })
+            })
+            .catch(function (err) {
+                res.json({error: err});
+            })
+    });
+};
+
 module.exports = {
-    createBrand: createBrand
+    createBrand: createBrand,
+    listBrand: listBrand,
+    retriveBrand: retriveBrand,
+    updateBrand: updateBrand
 };

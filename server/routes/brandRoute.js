@@ -7,5 +7,7 @@ var brandController = require('../controllers/brandController');
 
 route.post('/brand', brandController.brandCreate);
 route.get('/brand', brandController.brandListing);
+route.get('/brand/:id', brandController.brandRetrive);
+route.put('/brand/:id', brandController.brandUpdate);
 
 module.exports = route;
