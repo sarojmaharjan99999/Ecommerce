@@ -15,8 +15,6 @@ app.get('/', function (req, res) {
     res.send("Hello world");
 });
 
-var brandRoute = require('./routes/brandRoute');
-app.use(brandRoute);
 
 var routersPath = path.join (__dirname, "routes");
 fs.readdirSync(routersPath).forEach(function (file) {

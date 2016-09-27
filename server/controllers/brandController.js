@@ -13,7 +13,6 @@ var brandCreate = function (req, res) {
         });
 };
 
-
 var brandListing = function(req, res){
     brandService.listBrand()
         .then(function (brand) {
