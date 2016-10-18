@@ -12,6 +12,46 @@ var categoryCreate = function (req, res) {
     });
 };
 
+var categoryListing = function(req, res){
+  categoryService.listCategory()
+      .then(function (category) {
+        res.json({categorys: category});
+      })
+      .catch(function (err) {
+        res.json({error: err.message});
+      });
+};
+
+var categoryRetrive =  function (req, res) {
+  var id = req.params.id;
+  models.Category.findById(id)
+      .then(function (category) {
+        res.json({category: category});
+      })
+      .catch(function (err) {
+        res.json({error: err});
+      })
+
+};
+
+var categoryUpdate = function (req, res) {
+  var id = req.params.id;
+  var categoryParams = req.body;
+  models.Category.findById(id)
+      .then(function (category) {
+        category.updateAttributes(categoryParams)
+            .then(function (updatedCategory) {
+              res.json({category: updatedCategory});
+            })
+      })
+      .catch(function (err) {
+        res.json({error: err});
+      })
+};
+
 module.exports = {
-  categoryCreate: categoryCreate
+  categoryCreate: categoryCreate,
+  categoryListing: categoryListing,
+  categoryUpdate: categoryUpdate,
+  categoryRetrive: categoryRetrive
 };
