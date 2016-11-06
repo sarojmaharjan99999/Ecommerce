@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
     selector: 'main-content',
     template: `
             <main id="main">
-                <h2>This is main content</h2>
                 <router-outlet></router-outlet>
              </main>
        `,

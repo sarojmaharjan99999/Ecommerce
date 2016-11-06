@@ -13,9 +13,9 @@ var categoryCreate = function (req, res) {
 };
 
 var categoryListing = function(req, res){
-  categoryService.listCategory()
+  CategoryService.listCategory()
       .then(function (category) {
-        res.json({categorys: category});
+        res.json({categories: category});
       })
       .catch(function (err) {
         res.json({error: err.message});

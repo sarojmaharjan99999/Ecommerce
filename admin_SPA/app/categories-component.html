@@ -1,6 +1,17 @@
-<h2>My Categories</h2>
-<ul>
-    <li *ngFor="let category of categories">
-        <span class="badge">{{category.id}}</span> {{category.name}}
-    </li>
-</ul>
+<h2>List of categories</h2>
+<table class="table">
+  <thead>
+  <tr>
+    <th>SN</th>
+    <th>Name</th>
+    <th>Status</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let category of categories; let i = index">
+    <th>{{i + 1}}</th>
+    <th>{{category.name}}</th>
+    <th>{{category.status}}</th>
+  </tr>
+  </tbody>
+</table>
