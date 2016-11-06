@@ -20,6 +20,47 @@ var createCategory = function (categoryParams) {
     });
 
 };
+var listCategory = function () {
+    return new Promise(function (resolve, reject) {
+        models.Category.findAll()
+            .then(function (categorys) {
+                resolve(categorys);
+            })
+            .catch(function (err) {
+                reject(err);
+            })
+    });
+};
+
+var retriveCategory = function (id) {
+    return new Promise(function (resolve, reject) {
+        models.Category.findAll(id)
+            .then(function (categorys) {
+                resolve(categorys);
+            })
+            .catch(function (err) {
+                reject(err);
+            })
+    });
+};
+
+var updateCategory = function () {
+    var id = req.params.id;
+    var categoryParams = req.body;
+    return new Promise(function (resolve, reject) {
+        models.Category.findById(id)
+            .then(function (categorys) {
+                category.updateAttributes(categoryParams)
+                    .then(function (updatedcategorys) {
+                        res.json({category: updatedcategorys});
+                    })
+            })
+            .catch(function (err) {
+                res.json({error: err});
+            })
+    });
+};
+
 
 var listCategory = function ( ) {
     return new Promise(function (resolve, reject) {
@@ -38,5 +79,7 @@ var listCategory = function ( ) {
 
 module.exports = {
     createCategory: createCategory,
-    listCategory: listCategory
+    listCategory: listCategory,
+    retriveCategory: retriveCategory,
+    updateCategory: updateCategory
 };
