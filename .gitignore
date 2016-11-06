@@ -5,7 +5,7 @@
 */**/node_modules
 
 # log files
-*/**/npm-debug.log
+**/npm-debug.log
 
 # database config
 server/config/config.json
