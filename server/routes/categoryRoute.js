@@ -6,5 +6,6 @@ var route     = express.Router();
 var CategoryController = require('../controllers/categoryController');
 
 route.post('/categories', CategoryController.categoryCreate);
+route.get('/categories', CategoryController.categoryList);
 
 module.exports = route;

@@ -21,6 +21,22 @@ var createCategory = function (categoryParams) {
 
 };
 
+var listCategory = function ( ) {
+    return new Promise(function (resolve, reject) {
+        Category.findAll( )
+            .then(function (categories) {
+                resolve(categories);
+            })
+            .catch(function (err) {
+                var error = new Error(err.message);
+                error.status = HttpStatus.BAD_REQUEST;
+                reject(error);
+            })
+    });
+
+};
+
 module.exports = {
-    createCategory: createCategory
+    createCategory: createCategory,
+    listCategory: listCategory
 };

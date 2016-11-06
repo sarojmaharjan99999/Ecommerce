@@ -12,6 +12,17 @@ var categoryCreate = function (req, res) {
     });
 };
 
+var categoryList = function (req, res) {
+  CategoryService.listCategory( )
+      .then(function (categories) {
+        res.json({categories: categories});
+      })
+      .catch(function (err) {
+        res.status(err.status).json({error: {message: err.message}});
+      });
+};
+
 module.exports = {
-  categoryCreate: categoryCreate
+  categoryCreate: categoryCreate,
+  categoryList: categoryList
 };
