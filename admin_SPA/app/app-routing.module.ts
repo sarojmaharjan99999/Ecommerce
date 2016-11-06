@@ -1,10 +1,10 @@
-import { ModuleWithProviders }      from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule }             from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AddNewComponent }      from './add-new.component';
 import { CategoryComponent }      from './category.component';
 
-const appRoutes: Routes = [
+const routes: Routes = [
     {
         path: 'add-new-form',
         component: AddNewComponent
@@ -15,4 +15,8 @@ const appRoutes: Routes = [
     }
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+@NgModule({
+    imports: [ RouterModule.forRoot(routes) ],
+    exports: [ RouterModule ]
+})
+export class AppRoutingModule {}
