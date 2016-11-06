@@ -2,10 +2,10 @@
 .idea
 
 # node packages
-*/**/node_modules
+**/node_modules
 
 # log files
-**/npm-debug.log
+**/*.log
 
 # database config
 server/config/config.json
