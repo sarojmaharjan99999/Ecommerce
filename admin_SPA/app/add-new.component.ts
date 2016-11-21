@@ -1,4 +1,6 @@
 import { Component , AfterViewInit} from '@angular/core';
+import { Router } from '@angular/router';
+
 import { Category } from './category';
 import { CategoryService } from './category.service';
 
@@ -12,15 +14,19 @@ declare var jquery :any;
 })
 
 export class AddNewComponent implements AfterViewInit{
-    ngAfterViewInit() {
-        jquery(document).ready(function () {
-            jquery('select').material_select();
-        });
-    }
-    model = new Category();
-    constructor(private categoryService: CategoryService) { }
+    constructor(private categoryService: CategoryService, private router: Router) { }
 
-    onSubmit(model) {
-        this.categoryService.createCategory(model);
+    ngAfterViewInit() {
+        // jquery(document).ready(function () {
+        //     jquery('select').material_select();
+        // });
+    }
+    model = new Category('');
+
+    onSubmit() {
+        this.categoryService.createCategory(this.model)
+            .then(function () {
+                this.router.navigate(['categories']);
+            })
     }
 }

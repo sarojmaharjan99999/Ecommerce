@@ -35,18 +35,13 @@ var categoryRetrive =  function (req, res) {
 };
 
 var categoryUpdate = function (req, res) {
-  var id = req.params.id;
-  var categoryParams = req.body;
-  models.Category.findById(id)
-      .then(function (category) {
-        category.updateAttributes(categoryParams)
-            .then(function (updatedCategory) {
-              res.json({category: updatedCategory});
-            })
-      })
-      .catch(function (err) {
-        res.json({error: err});
-      })
+    CategoryService.updateCategory(req)
+        .then(function(updatedCategory){
+            res.json({category: updatedCategory});
+        })
+        .catch(function (err) {
+            res.json({error: err});
+        });
 };
 
 module.exports = {

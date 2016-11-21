@@ -44,19 +44,19 @@ var retriveCategory = function (id) {
     });
 };
 
-var updateCategory = function () {
+var updateCategory = function (req) {
     var id = req.params.id;
     var categoryParams = req.body;
     return new Promise(function (resolve, reject) {
-        models.Category.findById(id)
-            .then(function (categorys) {
+        Category.findById(id)
+            .then(function (category) {
                 category.updateAttributes(categoryParams)
-                    .then(function (updatedcategorys) {
-                        res.json({category: updatedcategorys});
+                    .then(function (updatedcategory) {
+                        resolve(updatedcategory)
                     })
             })
             .catch(function (err) {
-                res.json({error: err});
+                reject(err);
             })
     });
 };

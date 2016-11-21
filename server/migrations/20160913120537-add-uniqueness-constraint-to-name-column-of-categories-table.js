@@ -8,7 +8,7 @@ module.exports = {
         [Sequelize.fn('lower', Sequelize.col('name'))],
         {
           indexName: 'uniqueName',
-    	    indicesType: 'UNIQUE'
+          indicesType: 'UNIQUE'
         }
       )
     ];

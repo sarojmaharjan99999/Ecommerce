@@ -7,7 +7,7 @@ import { CategoryComponent }      from './category.component';
 const routes: Routes = [
   { path: '', redirectTo: '/categories', pathMatch: 'full' },
   {
-    path: 'add-new-form',
+    path: 'categories/new',
     component: AddNewComponent
   },
   {

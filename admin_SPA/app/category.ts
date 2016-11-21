@@ -1,4 +1,6 @@
 export class Category {
-    name: string;
-    status: number;
+    constructor(
+        public name: string,
+        public status: number = 1
+    ){}
 }

@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var express = require("express");
 var fs = require("fs");
 var path = require("path");
+var cors = require("cors");
 var app     = express();
 
 var port = 5000;
@@ -11,13 +12,7 @@ var port = 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use(function (req, res, next) {
-        res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
-        res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
-        res.setHeader('Access-Control-Allow-Credentials', true);
-        next();
-});
+app.use(cors());
 
 app.get('/', function (req, res) {
     res.send("Hello world");
