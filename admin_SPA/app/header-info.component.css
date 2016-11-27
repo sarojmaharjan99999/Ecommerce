@@ -1,0 +1,107 @@
+#header{
+    padding:10px 0 0;
+    background: whitesmoke;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+}
+
+.holder{
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.logo{
+    padding-top: 5px;
+    width: 200px;
+}
+
+.right-header-info{
+    width: 40%;
+    text-align: right;
+}
+
+.list-links {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.list-links > li {
+    display: inline-block;
+    vertical-align: middle;
+    padding:0 0 0 20px;
+}
+
+.search-form{
+    position: relative;
+    margin: 0;
+    padding-right: 30px;
+}
+
+.search-form .ico-search{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.search-form input{
+    margin: 0;
+    height: 2em;
+    width: 0;
+}
+
+.search-form button{
+    border: none;
+    background: none;
+}
+
+.search-form input.display-block{
+    width: 100%;
+}
+
+.list-links .alert{
+    color: #000;
+    position: relative;
+    display: block;
+}
+
+.list-links .badge{
+    top: 0;
+    right: -8px;
+    transform: translateY(-50%);
+    background: darkred;
+    min-width: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    text-align: center;
+    color: white;
+}
+
+.acc-wrap{
+    display: block;
+    color: #000;
+}
+
+.arrow{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.img{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.account-info{
+    display: inline-block;
+    vertical-align: middle;
+    padding-left:5px;
+}
+
+.dropdown-content{
+    min-width: 200px;
+}
+

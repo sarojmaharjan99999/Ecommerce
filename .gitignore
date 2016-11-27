@@ -1,6 +1,11 @@
-#IDE files
+#IDEA files
 .idea
 
 # node packages
-*/**/node_modules
+**/node_modules
 
+# log files
+**/*.log
+
+# database config
+server/config/config.json

@@ -1,0 +1,37 @@
+<header id="header">
+    <div class="holder">
+        <div class="logo left">
+            <a href="#"><img class="responsive-img" src="../assets/images/logo.png" alt="logo"></a>
+        </div>
+        <div class="right-header-info right">
+            <ul class="list-links">
+                <li>
+                    <form class="search-form" role="search" >
+                        <input [class.display-block]="isClassVisible" type="text" name="headerSearch" placeholder="Enter your keyword">
+                        <button type="submit" (click)="isClassVisible = !isClassVisible;" class="ico-search"><i class="material-icons">search</i></button>
+                    </form>
+                </li>
+                <li><a href="#" class="alert"><i class="material-icons">add_alert</i><span class="badge">1</span></a></li>
+                <li>
+                    <!-- Dropdown Trigger -->
+                    <a class='dropdown-button acc-wrap' data-beloworigin="true" href='#' data-activates='dropdown1'>
+                        <span class="img"><i class="material-icons">account_circle</i></span>
+                        <span class="account-info">
+                            <span class="name">Alex</span>
+                            <span class="role">Administrator</span>
+                            <i class="material-icons arrow">keyboard_arrow_down</i>
+                        </span>
+                    </a>
+
+                    <!-- Dropdown Structure -->
+                    <ul id='dropdown1' class='dropdown-content'>
+                        <li><a href="#">My Profile</a></li>
+                        <li><a href="#">My Blog</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+
