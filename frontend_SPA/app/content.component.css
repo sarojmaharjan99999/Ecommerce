@@ -1,0 +1,48 @@
+.holder{
+    overflow: hidden;
+    padding: 15px 0;
+}
+
+.sidelist{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidelist li{
+    margin-bottom: 15px;
+}
+
+.text h3{
+    font-size: 24px;
+    line-height: 28px;
+    margin: 0 0 10px;
+}
+
+.content {
+    text-align: center;
+}
+
+.content h2{
+    margin: 0 0 15px;
+
+}
+
+.products-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.products-list li{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 5px 20px;
+    border: 1px solid #563194;
+}
+
+.products-list .caption{
+    background: #563194;
+    overflow: hidden;
+    padding: 5px;
+}

@@ -1,0 +1,31 @@
+.footer-holder{
+    background: #190a31;
+    padding: 20px 25px;
+}
+
+.footer-holder .row{
+    overflow: hidden;
+    margin: 0;
+}
+
+.footer-holder ul{
+    margin: 0;
+    padding: 0 10px;
+    list-style: none;
+    text-align: center;
+}
+
+.footer-holder a{
+    color: #fff;
+}
+
+.footer-holder a:hover{
+    text-decoration: underline;
+}
+
+.bottom-bar{
+    background: #0a0217;
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+}
